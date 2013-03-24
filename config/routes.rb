@@ -1,4 +1,7 @@
 Docdistance::Application.routes.draw do
+  resources :documents
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
