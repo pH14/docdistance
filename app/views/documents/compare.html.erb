@@ -15,12 +15,38 @@
     </div>
   </div>
 
-  <div class="form-actions">
-    <%= submit_tag 'Compare' %>
+  <div class='row-fluid'>
+  <div class="form-actions span12 text-center">
+      <%= submit_tag 'Compare' %>
+  </div>
   </div>
 <% end %>
 
 <div class='row-fluid' id='comparison-content'>
+  <div class='span12 text-center' id='similarity'>
+
+  </div>
   <div class='span12'>
+    <table class='table table-striped'>
+      <thead>
+        <tr>
+          <th> </th>
+          <th> Document 1 </th>
+          <th> Document 2 </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> Total Words </td>
+          <td id='doc1-num-words'> </td>
+          <td id='doc2-num-words'> </td>
+        </tr>
+        <tr>
+          <td> Unique Words </td>
+          <td id='doc1-uniq-words'> </td>
+          <td id='doc2-uniq-words'> </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
