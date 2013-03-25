@@ -1,5 +1,12 @@
 Docdistance::Application.routes.draw do
-  resources :documents
+  resources :documents do
+    collection do
+      get :compare
+      post :compare_2
+    end
+  end
+
+  root :to => "documents#compare"
 
 
   # The priority is based upon order of creation:
