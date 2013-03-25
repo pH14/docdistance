@@ -1,13 +1,19 @@
 Docdistance::Application.routes.draw do
+  resources :novels
+
   resources :documents do
     collection do
       get :compare
       post :compare_2
+      get :compare_authors
+      post :compare_authors
     end
   end
 
+  match '/novels' => "novels#index"
+  match '/compare' => "documents#compare"
+  match '/more' => "novels#more"
   root :to => "documents#compare"
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

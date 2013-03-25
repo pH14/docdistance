@@ -43,10 +43,22 @@ module DocumentDistance
 end
 
 if $0 == __FILE__
-  doc1 = "A quick brown fox cats dogs dogs."
-  doc2 = "Cookies"
-  doc3 = "A quick bears black cats dogs dogs."
-  puts DocumentDistance.doc_distance doc1, doc2
-  puts DocumentDistance.doc_distance doc1, doc1
-  puts DocumentDistance.doc_distance doc1, doc3
+#  doc1 = "A quick brown fox cats dogs dogs."
+#  doc2 = "Cookies"
+#  doc3 = "A quick bears black cats dogs dogs."
+#  puts DocumentDistance.doc_distance doc1, doc2
+#  puts DocumentDistance.doc_distance doc1, doc1
+#  puts DocumentDistance.doc_distance doc1, doc3
+
+  Dir.glob('assets/*.txt') do |doc2|
+    print "<tr>\n"
+    print "<td>#{doc2}</td>\n"
+    t2 = File.open(doc2, 'rb').read
+    Dir.glob('assets/*.txt') do |doc1|
+      t1 = File.open(doc1, 'rb').read
+      x = (DocumentDistance.doc_distance t1, t2)[0]
+      print "<td>#{x}</td>\n"
+    end
+    print "</tr>\n"
+  end
 end
