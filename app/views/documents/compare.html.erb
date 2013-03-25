@@ -1,0 +1,26 @@
+<%- model_class = Document -%>
+<div class="page-header">
+  <h1> Compare Documents </h1>
+</div>
+
+<%= form_tag('/documents/compare_2', method: 'post', remote: true) do %>
+  <div class='row-fluid'>
+    <div class='span6'>
+      <%= text_area_tag :doc_a, "Copy your first document here",
+        size: '50x12', style: 'width: 100%'  %>
+    </div>
+    <div class='span6'>
+      <%= text_area_tag :doc_b, "Copy your second document here",
+        size: '50x12', style: "width: 100%"%>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= submit_tag 'Compare' %>
+  </div>
+<% end %>
+
+<div class='row-fluid' id='comparison-content'>
+  <div class='span12'>
+  </div>
+</div>
